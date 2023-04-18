@@ -5,10 +5,33 @@ project:
 
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
+
+## UART
+
 #  source_files:        
-#    - counter.v
-#    - decoder.v
-#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+#    - uart_test.v
+#    - uart_basic.v
+#    - uart_baud_tick_gen.v
+#    - uart_rx.v
+#    - uart_tx.v
+#    - data_sync.v
+#  top_module:  "uart_test"      # put the name of your top module here, make it unique by prepending your github username
+
+## RING OSC
+
+  source_files:        
+    - top_tt03.v
+    - contador.v
+    - promedio.v
+    - USM_ringoscillator.v
+    - uart_test.v
+    - uart_basic.v
+    - uart_baud_tick_gen.v
+    - uart_rx.v
+    - uart_tx.v
+    - data_sync.v
+    - FSM_controller.v
+  top_module:  "top_tt03"      # put the name of your top module here, make it unique by prepending your github username
 
 # Keep a track of the submission yaml
 yaml_version: 3.0
@@ -18,44 +41,44 @@ yaml_version: 3.0
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
 documentation: 
-  author:       ""      # Your name
-  title:        ""      # Project title
-  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  description:  ""      # Short description of what your project does
+  author:       "Jorge Marin, Daniel Arevalos"
+  title:        "ro-based_tempsense"
+  language:     "Verilog"
+  description:  "Ring oscillator whose frecuency depends on temperature."
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      Explain how your project works
+      Uses counters to determine the number of cycles of the ring oscillator within a clock period, wich will then be sent through the UART to determine the temperature vs frecuency caracteristic.
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-      Explain how to test your project
+      After reset and enable are set, the ring oscillator should start and then when a START code is received by UART, a value is sent back.
 
 # A description of what the inputs do
   inputs:               
     - clock
+    - enable
     - reset
-    - none
-    - none
+    - rx
     - none
     - none
     - none
     - none
 # A description of what the outputs do
   outputs:
-    - segment a
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
+    - tx
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
 
 # The following fields are optional
-  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  tag:          "oscillator, timer, sensor, experiment"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
   external_hw:  ""      # Describe any external hardware needed
   discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
-  clock_hz:     0       # Clock frequency in Hz (if required)
+  clock_hz:     9600       # Clock frequency in Hz (if required)
   picture:      ""      # relative path to a picture in your repository
