@@ -24,7 +24,6 @@ project:
     - contador.v
     - promedio.v
     - USM_ringoscillator.v
-    - uart_test.v
     - uart_basic.v
     - uart_baud_tick_gen.v
     - uart_rx.v
