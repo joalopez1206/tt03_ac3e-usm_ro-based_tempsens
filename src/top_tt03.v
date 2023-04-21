@@ -11,8 +11,8 @@ wire [1:0] send_sel;
 wire clk_external, clk_sel;
 wire clk;
 
-assign clk_internal = io_in[1];
-assign clk_external = io_in[0];
+assign clk_external = io_in[1];
+assign clk_internal = io_in[0];
 assign clk_sel = io_in[2];
 //assign clk = io_in[0];
 assign en = io_in[3];
