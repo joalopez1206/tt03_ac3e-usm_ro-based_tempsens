@@ -9,7 +9,7 @@ reg [7:0] tx_data;
 wire [1:0] send_sel;
 
 wire clk_internal, clk_external, clk_sel;
-reg clk;
+wire clk;
 
 assign clk_internal = io_in[0];
 assign clk_external = io_in[1];
@@ -25,13 +25,15 @@ assign io_out[7:1] = 0;
 wire out_osc;
 wire [15:0] count;
 
-always @* begin
-	case(clk_sel)
-		0: clk = clk_internal;
-		1: clk = clk_external;
-		default clk = clk_internal;
-	endcase
-end
+mux m(clk_internal, clk_external, clk_sel, clk);
+
+//always @* begin
+//	case(clk_sel)
+//		0: clk = clk_internal;
+//		1: clk = clk_external;
+//		default clk = clk_internal;
+//	endcase
+//end
 
 always @* begin
 	case(send_sel)
