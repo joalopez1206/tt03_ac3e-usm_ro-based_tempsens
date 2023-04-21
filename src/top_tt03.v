@@ -11,8 +11,8 @@ wire [1:0] send_sel;
 wire clk_external, clk_sel;
 wire clk;
 
-assign clk_internal = io_in[1];
-assign clk_external = io_in[0];
+assign clk_internal = io_in[0];
+assign clk_external = io_in[1];
 assign clk_sel = io_in[2];
 //assign clk = io_in[0];
 assign en = io_in[3];
@@ -27,7 +27,7 @@ assign io_out[7:1] = 0;
 wire out_osc;
 wire [15:0] count;
 
-mux m(clk_internal, clk_external, clk_sel, clk);
+mux m(clk_external, clk_internal, clk_sel, clk);
 
 //always @* begin
 //	case(clk_sel)
