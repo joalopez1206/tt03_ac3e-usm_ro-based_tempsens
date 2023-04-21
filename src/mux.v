@@ -1,14 +1,14 @@
 module mux(input a,input b,input sel,output reg y);
 
-always @* begin
+always @(a or b or sel) begin
 	case(sel)
 		0: begin
-			y = a;
+			y <= a;
 		end
 		1: begin
-			y = b;
+			y <= b;
 		end
-		default y = a;
+		default y <= a;
 	endcase
 end
 
