@@ -27,7 +27,7 @@ assign io_out[7:1] = 0;
 wire out_osc;
 wire [15:0] count;
 
-mux m(clk_internal, clk_external, clk_sel, clk);
+mux m(clk_external, clk_internal, clk_sel, clk);
 
 //always @* begin
 //	case(clk_sel)
