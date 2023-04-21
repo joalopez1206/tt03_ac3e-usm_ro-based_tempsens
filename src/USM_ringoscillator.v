@@ -10,7 +10,8 @@ module inv_with_delay(
 //assign #0.02 Y=~A;
 assign #200 Y=~A;
 `else
-sky130_fd_sc_hd__inv_2 inv(.A(A),.Y(Y));
+//sky130_fd_sc_hd__inv_2 inv(.A(A),.Y(Y));
+sky130_fd_sc_hd__nand4_4 nand4(Y, A, A, A, A);
 //nor #(2) (Y,A,A);
 `endif
 endmodule

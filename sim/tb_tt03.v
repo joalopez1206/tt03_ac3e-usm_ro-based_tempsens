@@ -32,7 +32,7 @@ module tb_tt03(
     reset = 1;
     clk_internal = 0;
     clk_external = 0;
-    clk_sel = 0;
+    clk_sel = 1;
     en = 0;
     rx = 1;
     #100000 en = 1;
@@ -48,7 +48,7 @@ module tb_tt03(
     #1000000 rx = 0; //bit 7
     #1000000 rx = 0; //bit 8
     #1000000 rx = 1; //bit de termino
-    #100000000 clk_sel = 0; 
+    #100000000 clk_sel = 1; 
     #100000000 $finish; 
     end
     
