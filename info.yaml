@@ -30,6 +30,7 @@ project:
     - uart_tx.v
     - data_sync.v
     - FSM_controller.v
+    - mux.v
   top_module:  "top_tt03"      # put the name of your top module here, make it unique by prepending your github username
 
 # Keep a track of the submission yaml
