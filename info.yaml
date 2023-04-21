@@ -57,7 +57,7 @@ documentation:
   inputs:  
   	- clk_external
   	- clk_internal
-  	- clk_sel   
+  	- clk_sel
     - enable
     - reset
     - rx
