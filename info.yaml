@@ -54,13 +54,13 @@ documentation:
       After reset and enable are set, the ring oscillator should start and then when a START code is received by UART, a value is sent back.
 
 # A description of what the inputs do
-  inputs:               
-    - clock
+  inputs:  
+  	- clk_external
+  	- clk_internal
+  	- clk_sel   
     - enable
     - reset
     - rx
-    - none
-    - none
     - none
     - none
 # A description of what the outputs do
