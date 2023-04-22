@@ -24,7 +24,15 @@ assign osc_sel = io_in[6];
 
 //OUTPUTS
 assign io_out[0] = tx;
-assign io_out[7:1] = 0;
+assign io_out[1] = promedio[8];
+assign io_out[2] = promedio[10];
+assign io_out[3] = promedio[13];
+assign io_out[4] = promedio[15];
+assign io_out[5] = promedio[17];
+assign io_out[6] = promedio[19];
+assign io_out[7] = promedio[21];
+
+//assign io_out[7:1] = 0;
 
 wire out_osc_inv, out_osc_nand, out_osc;
 wire [15:0] count;
