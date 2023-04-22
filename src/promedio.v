@@ -3,12 +3,12 @@ module promedio #(parameter N=8)(
 	input reset, 
 	input en,
 	input sum_en,
-	input [N-1:0] in,
+	input [15:0] in,
 	output reg [N-1:0] out,
 	output reg sum_redy
 ); 
 
-reg [N-1:0] contador;
+reg [15:0] contador;
 reg [N-1:0] promedio;
 
 always @(posedge clk) begin
@@ -18,13 +18,13 @@ end
 
 always @(posedge clk) begin
 	if(reset | contador == 0 | !en) promedio <= 0;
-	else if(contador == 100) promedio <= promedio;
+	else if(contador == 128) promedio <= promedio;
 	else promedio <= promedio + in;
 end	
 
 always @(posedge clk) begin
 	if(reset) sum_redy <= 0;
-	else if(contador == 100) sum_redy <= 1;
+	else if(contador == 128) sum_redy <= 1;
 	else sum_redy <= 0;
 end
 

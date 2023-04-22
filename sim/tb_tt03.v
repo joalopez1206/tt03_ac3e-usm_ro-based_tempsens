@@ -9,6 +9,7 @@ module tb_tt03(
     reg en;
     reg reset;
     reg rx;
+    reg osc_sel;
     wire tx;
     wire [7:0] io_in, io_out;
     
@@ -18,6 +19,7 @@ module tb_tt03(
     assign io_in[3] = en;
     assign io_in[4] = reset;
     assign io_in[5] = rx;
+    assign io_in[6] = osc_sel;
     assign tx = io_out[0];
     
     top_tt03 DUT(io_in, io_out);
@@ -33,6 +35,7 @@ module tb_tt03(
     clk_internal = 0;
     clk_external = 0;
     clk_sel = 1;
+    osc_sel = 0;
     en = 0;
     rx = 1;
     #100000 en = 1;
@@ -49,6 +52,7 @@ module tb_tt03(
     #1000000 rx = 0; //bit 8
     #1000000 rx = 1; //bit de termino
     #100000000 clk_sel = 1; 
+    osc_sel = 1;
     #100000000 $finish; 
     end
     

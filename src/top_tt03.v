@@ -3,7 +3,7 @@
 module top_tt03(input [7:0] io_in, output [7:0] io_out);
 
 wire en, reset, rx, rx_ready, tx, tx_start, tx_busy, sum_ready, sum_en, test;
-wire [15:0] promedio;
+wire [23:0] promedio;
 wire [7:0] rx_data;
 reg [7:0] tx_data;
 wire [1:0] send_sel;
@@ -35,6 +35,7 @@ always @* begin
 	case(send_sel)
 		0: tx_data = promedio[7:0];
 		1: tx_data = promedio[15:8];
+		2: tx_data = promedio[23:16];
 		default: tx_data = promedio[7:0];
 	endcase
 end
@@ -45,7 +46,7 @@ USM_ringoscillator_nand4 osc2(en, out_osc_nand);
 mux m2(out_osc_inv, out_osc_nand, osc_sel, out_osc);
 
 contador #(16) cont(out_osc, en, reset, clk, count);
-promedio #(16) prom(clk, reset, en, sum_en, count, promedio, sum_ready);
+promedio #(24) prom(clk, reset, en, sum_en, count, promedio, sum_ready);
 
 FSM_controller controller(clk, reset, sum_ready, test, rx_ready, rx_data, sum_en, tx_start, send_sel);
 

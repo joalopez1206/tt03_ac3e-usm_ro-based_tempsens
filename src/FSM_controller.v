@@ -20,6 +20,8 @@ localparam SEND_SUM_1 = 3;
 localparam WAIT_SEND_1 = 4;
 localparam SEND_SUM_2 = 5;
 localparam WAIT_SEND_2 = 6;
+localparam SEND_SUM_3 = 7;
+localparam WAIT_SEND_3 = 8;
 
 localparam START_CODE = 0;
 
@@ -63,6 +65,15 @@ always @* begin
 		end
 		WAIT_SEND_2: begin
 			send_sel = 1;
+			if(timer >= 100) next_state = SEND_SUM_3;
+		end
+		SEND_SUM_3: begin
+			tx_send = 1;
+			send_sel = 3;
+			next_state = WAIT_SEND_3;
+		end
+		WAIT_SEND_3: begin
+			send_sel = 3;
 			if(timer >= 100) next_state = WAIT_SUM;
 		end
 	endcase
