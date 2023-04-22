@@ -24,14 +24,8 @@ module inv_with_delay(
 //assign #0.02 Y=~A;
 assign #200 Y=~A;
 `else
-<<<<<<< HEAD
 //sky130_fd_sc_hd__inv_2 inv(.A(A),.Y(Y));
 nor #(2) (Y,A,A);
-=======
-sky130_fd_sc_hd__inv_2 inv(.A(A),.Y(Y));
-//sky130_fd_sc_hd__nand4_4 nand4(.Y(Y), .A(A), .B(A), .C(A), .D(A));
-//nor #(2) (Y,A,A);
->>>>>>> e3f7950311302a5e9983b50051b085e117ab3a19
 `endif
 endmodule
 
