@@ -1,5 +1,9 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/wokwi_test/badge.svg)
 
+# Test Ring Oscillator Based Temp Sensor 
+
+> &copy; 2023 Jorge Marin and Daniel Arevalos, Advanced Center for Electrical and Electronic Engeneering (AC3E), Universidad Tecnica Federico Santa Maria, Valparaiso, Chile
+
 ![photo_5053272115054226319_y](https://user-images.githubusercontent.com/64666124/233799343-270f5787-9671-4128-8acd-5d360de0d02f.jpg)
 # What is Tiny Tapeout?
 
