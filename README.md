@@ -8,9 +8,15 @@ This is the first iteration of the ring oscillator based temp sensor in **Tiny T
 
 ![photo_5053272115054226319_y](https://user-images.githubusercontent.com/64666124/233799343-270f5787-9671-4128-8acd-5d360de0d02f.jpg)
 
-## What it does ?
+## Description
 
+The system is composed of two ring oscillator that will be tested separately, the first one is a 99 stages [inversor2](https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/inv/README.html) ring oscillator with a frecuency of 192MHz at 0 degrees and 180MHz at 200 degrees. The second one is a 33 stages [nand4](https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/nand4/README.html) ring oscillator with a frecuency of 185MHz at 0 degrees and 150MHz at 200 degrees. The number of periods within a clock cycle is counted by a counter module, then a series of count results are added to a variable and sent via uart to then perform the division and obtein an average value. Also, part of the count value (8-14 bit) is sent to the output in case the uart doesnt work.
 
+## What is the goal of the system ?
+
+* Have a first approach to the design of a digital sensor.
+* Analyze the effects of temperature on 2 different ring oscillator designs.
+* Close the loop of the digital design flow to later share the knowledge with other students.
 
 # What is Tiny Tapeout?
 
