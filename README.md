@@ -2,9 +2,16 @@
 
 # Test Ring Oscillator Based Temp Sensor 
 
-> &copy; 2023 Jorge Marin and Daniel Arevalos, Advanced Center for Electrical and Electronic Engeneering (AC3E), Universidad Tecnica Federico Santa Maria, Valparaiso, Chile
+> &copy; 2023 Jorge Marin  and Daniel Arevalos, Advanced Center for Electrical and Electronic Engeneering ([AC3E](http://ac3e.usm.cl/)), Universidad Tecnica Federico Santa Maria ([USM](https://usm.cl/)), Valparaiso, Chile
+
+This is the first iteration of the ring oscillator based temp sensor in **Tiny Tapeout 03** from **Matt Venn**.
 
 ![photo_5053272115054226319_y](https://user-images.githubusercontent.com/64666124/233799343-270f5787-9671-4128-8acd-5d360de0d02f.jpg)
+
+## What it does ?
+
+
+
 # What is Tiny Tapeout?
 
 TinyTapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip!
