@@ -65,7 +65,7 @@ always @* begin
 		end
 		WAIT_SEND_2: begin
 			send_sel = 1;
-			if(timer >= 100) next_state = SEND_SUM_3;
+			if(timer >= 100) next_state = WAIT_SUM;
 		end
 		SEND_SUM_3: begin
 			tx_send = 1;
