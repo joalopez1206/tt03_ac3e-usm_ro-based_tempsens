@@ -53,6 +53,27 @@ module tb_tt03(
     #100000000 
     en_inv_osc = 0;
     en_nand_osc = 1;
+    #1000000 rx = 0; //bit de inicio
+    #1000000 rx = 1; //bit 1
+    #1000000 rx = 0; //bit 2
+    #1000000 rx = 0; //bit 3
+    #1000000 rx = 0; //bit 4
+    #1000000 rx = 0; //bit 5
+    #1000000 rx = 0; //bit 6
+    #1000000 rx = 0; //bit 7
+    #1000000 rx = 0; //bit 8
+    #1000000 rx = 1; //bit de termino
+    #100000000 
+    #1000000 rx = 0; //bit de inicio
+    #1000000 rx = 0; //bit 1
+    #1000000 rx = 0; //bit 2
+    #1000000 rx = 0; //bit 3
+    #1000000 rx = 0; //bit 4
+    #1000000 rx = 0; //bit 5
+    #1000000 rx = 0; //bit 6
+    #1000000 rx = 0; //bit 7
+    #1000000 rx = 0; //bit 8
+    #1000000 rx = 1; //bit de termino
     #100000000 $finish; 
     end
     
