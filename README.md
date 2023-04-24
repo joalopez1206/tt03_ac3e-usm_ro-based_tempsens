@@ -1,6 +1,6 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/wokwi_test/badge.svg)
 
-# Test Ring Oscillator Based Temp Sensor 
+# Test Ring Oscillator Based Temp Sensor.
 
 > &copy; 2023 Jorge Marin  and Daniel Arevalos, Advanced Center for Electrical and Electronic Engeneering ([AC3E](http://ac3e.usm.cl/)), Universidad Tecnica Federico Santa Maria ([USM](https://usm.cl/)), Valparaiso, Chile
 
