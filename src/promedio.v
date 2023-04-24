@@ -18,13 +18,13 @@ end
 
 always @(posedge clk) begin
 	if(reset | contador == 0 | !en) promedio <= 0;
-	else if(contador == 101) promedio <= promedio;
+	else if(contador == 4) promedio <= promedio;
 	else promedio <= promedio + in;
 end	
 
 always @(posedge clk) begin
 	if(reset) sum_redy <= 0;
-	else if(contador == 101) sum_redy <= 1;
+	else if(contador == 4) sum_redy <= 1;
 	else sum_redy <= 0;
 end
 
