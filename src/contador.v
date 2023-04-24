@@ -19,19 +19,4 @@ always @(posedge osc_clk) begin
 	end
 end
 
-//reg clk_aux;
-
-//always @(posedge osc_clk) begin
-//	if(reset) clk_aux <= 0;
-//	else clk_aux <= clk;
-//end
-
-//wire clk_pulse;
-//and andd(clk_pulse, clk, ~clk_aux);
-
-//always @(posedge osc_clk) begin
-//	if(reset | clk_pulse | !en) count <= 0;
-//	else count <= count + 1;
-//end
-
 endmodule
