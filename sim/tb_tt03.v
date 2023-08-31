@@ -18,7 +18,7 @@ module tb_tt03(
     assign io_in[7] = osc_sel;
     assign tx = io_out[0];
     
-    top_tt03 DUT(io_in, io_out);
+    joalopez1206top_tt03 DUT(io_in, io_out);
     
     //50000
     always #50000 clk_internal = ~clk_internal;

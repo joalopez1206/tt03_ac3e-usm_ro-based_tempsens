@@ -7,7 +7,7 @@ project:
 # Source files must be in ./src and you must list each source file separately
 
   source_files:        
-    - top_tt03.v
+    - joalopez1206top_tt03.v
     - contador.v
     - promedio.v
     - USM_ringoscillator.v
